@@ -1,5 +1,6 @@
 let bank = 100
 
+
 const players = [
   { teamNumber: 1, emoji: '🏃‍♂️', skill: 10, name: "D'Marcus Williums" },
   { teamNumber: 1, emoji: '🤾‍♂️', skill: 30, name: "Tyroil Smoochie-Wallace" },
@@ -22,10 +23,103 @@ const players = [
   { teamNumber: 2, emoji: '🧍‍♂️', skill: 3, name: "Dan Smith" },
   { teamNumber: 2, emoji: '🐅', skill: 100, name: "Tiger" },
 ]
+draftPlayers()
+
+function betTeam1() {
+  team1Skill = 0
+  team2Skill = 0
+
+  for (let i = 0; i < players.length; i++) {
+    const teamScore1 = players[i];
+    if (teamScore1.teamNumber == 1) {
+      team1Skill += teamScore1.skill
+    }
+  }
+  for (let i = 0; i < players.length; i++) {
+    const teamScore2 = players[i];
+    if (teamScore2.teamNumber == 2) {
+      team2Skill += teamScore2.skill
+    }
+  }
+  console.log(team1Skill);
+  console.log(team2Skill);
+
+  if (team1Skill > team2Skill) {
+    bank += 25
+    console.log('winning bet');
+  } else {
+    bank -= 25
+    console.log('losing bet');
+    console.log(bank);
+
+  }
+  checkBank()
+  drawBank()
+  draftPlayers()
+  drawTeam1()
+  drawTeam2()
+}
+
+function betTeam2() {
+  team1Skill = 0
+  team2Skill = 0
+
+  for (let i = 0; i < players.length; i++) {
+    const teamScore1 = players[i];
+    if (teamScore1.teamNumber == 1) {
+      team1Skill += teamScore1.skill
+    }
+  }
+  for (let i = 0; i < players.length; i++) {
+    const teamScore2 = players[i];
+    if (teamScore2.teamNumber == 2) {
+      team2Skill += teamScore2.skill
+    }
+  }
+  console.log(team1Skill);
+  console.log(team2Skill);
+
+  if (team2Skill > team1Skill) {
+    bank += 25
+    console.log('winning bet');
+  } else {
+    bank -= 25
+    console.log('losing bet');
+    console.log(bank);
+
+  }
+  checkBank()
+  drawBank()
+  draftPlayers()
+  drawTeam1()
+  drawTeam2()
+
+}
+
+function checkBank() {
+  if (bank <= 0) {
+    window.alert('you lost');
+  }
+
+}
+
+function draftPlayers() {
+  console.log('drafting players');
+  for (let i = 0; i < players.length; i++) {
+    const player = players[i];
+    player.teamNumber = randomTeam()
+
+  }
+
+}
+
+function randomTeam() {
+  const teamIndex = Math.floor(Math.random() * 2) + 1;
+  return teamIndex
 
 
 
-
+}
 
 
 
@@ -51,8 +145,14 @@ function drawTeam2() {
       team2Content += team2s.emoji
     }
   }
-  team2container.innerText = team2content
+  team2container.innerText = team2Content
+}
+
+function drawBank() {
+  const money = document.getElementById('bank')
+  money.innerText = bank
 }
 
 drawTeam1()
 drawTeam2()
+drawBank()
