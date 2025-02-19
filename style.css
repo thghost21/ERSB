@@ -1,0 +1,35 @@
+body {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  justify-content: space-between;
+}
+
+
+.team1Area {
+  min-height: 10dvh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team2Area {
+  min-height: 10dvh;
+  background-color: blue;
+
+
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.backdrop {
+  background-image: url(https://images.unsplash.com/photo-1561912847-95100ed8646c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: cover;
+  min-height: 100dvh;
+
+}
