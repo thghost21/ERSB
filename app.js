@@ -23,9 +23,14 @@ const players = [
   { teamNumber: 2, emoji: '🧍‍♂️', skill: 3, name: "Dan Smith" },
   { teamNumber: 2, emoji: '🐅', skill: 100, name: "Tiger" },
 ]
+
+const bets = [25, 50, 100,]
+
 draftPlayers()
 
-function betTeam1() {
+function betTeam1(indexNumber) {
+  const betAmount = bets[indexNumber]
+
   team1Skill = 0
   team2Skill = 0
 
@@ -45,10 +50,10 @@ function betTeam1() {
   console.log(team2Skill);
 
   if (team1Skill > team2Skill) {
-    bank += 25
+    bank += betAmount
     console.log('winning bet');
   } else {
-    bank -= 25
+    bank -= betAmount
     console.log('losing bet');
     console.log(bank);
 
@@ -60,7 +65,9 @@ function betTeam1() {
   drawTeam2()
 }
 
-function betTeam2() {
+
+function betTeam2(indexNumber) {
+  const betAmount = bets[indexNumber]
   team1Skill = 0
   team2Skill = 0
 
@@ -80,10 +87,10 @@ function betTeam2() {
   console.log(team2Skill);
 
   if (team2Skill > team1Skill) {
-    bank += 25
+    bank += betAmount
     console.log('winning bet');
   } else {
-    bank -= 25
+    bank -= betAmount
     console.log('losing bet');
     console.log(bank);
 
