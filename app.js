@@ -99,6 +99,11 @@ function betTeam2() {
 function checkBank() {
   if (bank <= 0) {
     window.alert('you lost');
+    bank = 100
+    drawBank()
+    draftPlayers()
+    drawTeam1()
+    drawTeam2()
   }
 
 }
@@ -120,6 +125,15 @@ function randomTeam() {
 
 
 }
+
+
+
+
+
+
+
+
+
 
 
 
