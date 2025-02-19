@@ -13,11 +13,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 3rem;
 }
 
 .team2Area {
   min-height: 10dvh;
   background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
 
 
 }

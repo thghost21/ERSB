@@ -24,8 +24,35 @@ const players = [
 ]
 
 
+
+
+
+
+
 function drawTeam1() {
   const team1Container = document.getElementById('team1'); // Grab Where, Team 1 will draw
   team1Content = ''; // Create empty  container first
   //.. loop through players adding only those on team1
+  for (let i = 0; i < players.length; i++) {
+    const team1s = players[i];
+    if (team1s.teamNumber == 1) {
+      team1Content += team1s.emoji
+    }
+  }
+  team1Container.innerText = team1Content
 }
+
+function drawTeam2() {
+  const team2container = document.getElementById('team2');
+  team2Content = '';
+  for (let i = 0; i < players.length; i++) {
+    const team2s = players[i];
+    if (team2s.teamNumber == 2) {
+      team2Content += team2s.emoji
+    }
+  }
+  team2container.innerText = team2content
+}
+
+drawTeam1()
+drawTeam2()
